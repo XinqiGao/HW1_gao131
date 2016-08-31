@@ -53,6 +53,7 @@ qplot(age, data=data, geom="density", fill=job, alpha=I(.5),
       main="Distribution of Age by Job", xlab="Age", 
       ylab="Density")
 
+
 # Boxplots of age by job 
 qplot(job, age, data=data, geom=c("boxplot"), 
       fill=job, main="Age by Job",
@@ -65,4 +66,20 @@ ggplot(data, aes(age) ) +
 ggplot(data, aes(age)) +
     geom_histogram(color="white", binwidth = 3)
 
+#HW1
+# bare bones histogram of balance
+hist(data$balance)
 
+# personalizing the histogram of balance
+hist(data$balance, main="Histogram of Balance", xlab="Balance($)"
+     , col="blue")
+
+
+# using the ggplot2 package to plot a histogram of age
+library(ggplot2)
+qplot(data$balance)
+
+# Kernel density plots for age grouped by education (indicated by color)
+qplot(age, data=data, geom="density", fill=education, alpha=I(.5), 
+      main="Distribution of Age by Education", xlab="Age", 
+      ylab="Density")
